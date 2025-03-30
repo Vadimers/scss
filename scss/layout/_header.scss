@@ -1,0 +1,12 @@
+// layout/_header.scss
+header {
+    padding: $gap-lx;
+
+    .nav {
+        @extend .nav; // Import navigation styles
+    }
+
+    .mobile-navigation {
+        @extend .mobile-navigation;
+    }
+}

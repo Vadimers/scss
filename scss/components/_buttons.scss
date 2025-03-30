@@ -1,0 +1,12 @@
+// components/_buttons.scss
+.btn-write-me {
+    padding: 19px 41px 20px;
+    background-color: $metallic-blue;
+    font-size: $font-size;
+    font-weight: 400;
+    line-height: 26px;
+    color: $white-color;
+    border: none;
+    cursor: pointer;
+    @include hover-opacity;
+}

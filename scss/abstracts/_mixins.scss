@@ -1,0 +1,53 @@
+// abstracts/_mixins.scss
+// Mixin for hover effects
+@mixin hover-opacity {
+    transition: opacity 0.3s;
+
+    &:hover {
+        opacity: 0.6;
+    }
+}
+
+// Mixin for flex centering
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Media query mixins
+@mixin media-up($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (min-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    }
+
+    @else {
+        @warn "Breakpoint #{$breakpoint} not found in $breakpoints map.";
+    }
+}
+
+@mixin media-down($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (max-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    }
+
+    @else {
+        @warn "Breakpoint #{$breakpoint} not found in $breakpoints map.";
+    }
+}
+
+@mixin media-between($lower, $upper) {
+    @if map-has-key($breakpoints, $lower) and map-has-key($breakpoints, $upper) {
+        @media (min-width: map-get($breakpoints, $lower)) and (max-width: map-get($breakpoints, $upper)) {
+            @content;
+        }
+    }
+
+    @else {
+        @warn "One or both breakpoints not found in $breakpoints map.";
+    }
+}

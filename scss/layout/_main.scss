@@ -1,0 +1,60 @@
+// layout/_main.scss
+main {
+    .main-section {
+        padding-top: $gap-lx;
+        padding-bottom: 140px;
+
+        h1 {
+            @extend h1;
+        }
+
+        p {
+            @extend p;
+        }
+
+        .btn-write-me {
+            @extend .btn-write-me;
+        }
+    }
+
+    .second-section,
+    .fourth-section {
+        padding: 112px $gap 100px;
+        @include flex-center;
+        flex-direction: column;
+        gap: 0;
+
+        p {
+            padding-bottom: 0;
+            text-align: center;
+            max-width: 540px;
+        }
+    }
+
+    .third-section {
+        padding: 100px 0;
+
+        ul {
+            @include flex-center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 45px;
+            color: $white-color;
+            padding: 0;
+
+            li {
+                @extend .project-item;
+            }
+        }
+    }
+
+    .fourth-section {
+        padding: 100px $gap;
+
+        iframe {
+            width: 90%;
+            height: 600px;
+            margin-top: 50px;
+        }
+    }
+}

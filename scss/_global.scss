@@ -1,0 +1,14 @@
+// _global.scss
+.container {
+    max-width: 1110px;
+    padding: 0 $gap;
+    margin: 0 auto;
+  }
+  
+  .bg-grey {
+    background-color: $grey;
+  }
+  
+  .bg-metallic-blue {
+    background-color: $metallic-blue;
+  }

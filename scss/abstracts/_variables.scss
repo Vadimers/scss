@@ -1,0 +1,19 @@
+// abstracts/_variables.scss
+$font-size: 16px;
+$font-family: "Roboto", sans-serif;
+
+$black-color: #0000;
+$white-color: #ffff;
+$metallic-blue: #34547a;
+$grey: #EEEFF1;
+$nickel-color: #727272;
+
+$gap: 20px;
+$gap-lg: 40px;
+$gap-sm: 10px;
+$gap-lx: 80px;
+
+$breakpoints: (
+    tablet: 600px,
+    mobile: 599px,
+);
