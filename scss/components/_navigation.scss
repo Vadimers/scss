@@ -5,51 +5,67 @@ ul {
     justify-content: flex-start;
     list-style: none;
     gap: $gap;
-}
-
-.nav {
+  }
+  
+  .nav {
     a {
+      text-decoration: none;
+      color: $black-color;
+      &:hover {
+        color: $metallic-blue;
+        transition: 0.3s linear;
+      }
+    }
+  }
+  
+  .mobile-navigation {
+    display: none;
+    position: relative; // Ensure the mobile navigation is relative to the header
+  
+    .checkbtn {
+      cursor: pointer;
+      font-size: 1.5rem;
+      position: relative;
+      z-index: 3; // Ensure the burger icon is above the menu
+      color: $black-color;
+    }
+  
+    .nav-mobile {
+      display: none;
+      position: absolute; // Position relative to the header
+      width: 100%;
+      height: auto; // Let the height be determined by the content
+      background: $grey;
+      left: 0;
+      top: 0;
+      padding: 60px 20px 20px; // Space for the burger icon and padding for the menu
+      z-index: 2; // Ensure the menu is above other content but below the burger icon
+      transition: transform 0.3s ease-in-out;
+      transform: translateX(-100%);
+  
+      ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+      }
+  
+      a {
         text-decoration: none;
         color: $black-color;
-
+        font-size: 1.2rem;
         &:hover {
-            color: $metallic-blue;
-            transition: 0.3s linear;
+          color: $metallic-blue;
+          transition: 0.3s linear;
         }
+      }
     }
-}
-
-.mobile-navigation {
-    display: none;
-
-    .checkbtn {
-        cursor: pointer;
-        font-size: 1.5rem;
-        position: relative;
-        z-index: 2;
-    }
-
-    .nav-mobile {
-        display: none;
-        position: absolute;
-        width: 100%;
-        background: lightgray;
-        opacity: 0.9;
-
-        ul {
-            flex-direction: column;
-            align-items: flex-start;
-        }
-    }
-
+  
     input {
-        opacity: 0;
-
-        &:checked~.nav-mobile {
-            display: block;
-            width: 100%;
-            padding: 40px 0 20px 50px;
-            top: 0;
-        }
+      display: none; // Hide the checkbox
     }
-}
+  
+    input:checked ~ .nav-mobile {
+      display: block;
+      transform: translateX(0); // Slide in the menu
+    }
+  }
